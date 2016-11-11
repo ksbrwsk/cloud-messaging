@@ -1,17 +1,32 @@
 # cloud-messaging
-Simple Spring Boot / Spring Cloud Stream Sample
+---------------------------
+### A simple Springboot application using Spring Spring Cloud Stream on RabbitMQ
 
-# Prerequisites
--running RabbitMQ on localhost
--Java 8
+**uses:**
 
-# Build
+* [Springboot](http://projects.spring.io/spring-boot/) web, actuator, integration, stream rabbit
+* [RabbitMQ](https://www.rabbitmq.com/) Message Broker
+
+## How to build and run
+
+### 
+
+Assuming Java and RabbitMQ are already installed on your local machine
+
+```
 mvn clean install
+```
 
-# Running the producer application
+the producer application
+
+```
 cd producer
 mvn spring-boot:run
+```
 
-# Running the consumer application
-cd consumer
+the consumer application
+
+```
+cd producer
 mvn spring-boot:run
+```
