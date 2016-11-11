@@ -30,3 +30,8 @@ the consumer application
 cd producer
 mvn spring-boot:run
 ```
+create and send a message
+
+```
+curl -d{} http://localhost:8000/greet/YourName
+```
