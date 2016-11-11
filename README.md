@@ -1,6 +1,6 @@
 # cloud-messaging
 ---------------------------
-### A simple Springboot application using Spring Spring Cloud Stream on RabbitMQ
+### A simple Springboot application using Spring Cloud Stream with RabbitMQ Message Broker
 
 **uses:**
 
