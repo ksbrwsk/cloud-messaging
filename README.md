@@ -11,7 +11,7 @@
 
 ### 
 
-Assuming Java and RabbitMQ are already installed on your local machine
+Assuming Java, Maven and RabbitMQ are already installed on your local machine
 
 ```
 mvn clean install
