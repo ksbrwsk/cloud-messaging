@@ -1,4 +1,4 @@
-package de.tpm.producer;
+package de.ksbrwsk.producer;
 
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;

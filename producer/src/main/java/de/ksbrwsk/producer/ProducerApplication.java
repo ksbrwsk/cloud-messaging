@@ -1,4 +1,4 @@
-package de.tpm.producer;
+package de.ksbrwsk.producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

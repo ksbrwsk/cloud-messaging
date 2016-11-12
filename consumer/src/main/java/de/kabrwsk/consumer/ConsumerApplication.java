@@ -1,4 +1,4 @@
-package de.tpm.consumer;
+package de.kabrwsk.consumer;
 
 import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.boot.SpringApplication;
