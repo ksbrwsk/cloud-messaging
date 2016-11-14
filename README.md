@@ -1,6 +1,8 @@
 # cloud-messaging
 ---------------------------
 ### A simple Springboot application using Spring Cloud Stream with RabbitMQ Message Broker
+### As seen on Spring Tips: Spring Cloud Stream by Josh Long
+### see: [Youtube](https://youtu.be/HQ00E60kB6c)
 
 **uses:**
 
@@ -24,12 +26,28 @@ cd producer
 mvn spring-boot:run
 ```
 
-the consumer application
+or
 
 ```
 cd producer
+java -jar target/consumer-<VERSION>.jar
+```
+
+the consumer application
+
+```
+cd consumer
 mvn spring-boot:run
 ```
+
+or
+
+```
+cd consumer
+java -jar consumer-<VERSION>.jar
+```
+
+
 create and send a message
 
 ```
