@@ -1,4 +1,4 @@
-package de.kabrwsk.consumer;
+package de.ksbrwsk.consumer;
 
 import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.boot.SpringApplication;
@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 
+import java.util.Map;
 import java.util.logging.Logger;
 
 @EnableBinding(ConsumerChannels.class)
@@ -29,7 +30,7 @@ public class ConsumerApplication {
     public IntegrationFlow integrationFlow(Logger logger, ConsumerChannels consumerChannels) {
         return IntegrationFlows
                 .from(consumerChannels.producer())
-                .handle(String.class, (payload, headers) -> {
+                .handle(Map.class, (payload, headers) -> {
                     logger.info("new Message arrived: " + payload);
                     return null;
                 })

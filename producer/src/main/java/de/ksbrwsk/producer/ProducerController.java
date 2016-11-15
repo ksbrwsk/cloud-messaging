@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 public class ProducerController {
 
@@ -18,8 +21,10 @@ public class ProducerController {
 
     @PostMapping("/greet/{name}")
     public void publish(@PathVariable String name) {
-        String greeting = "Hello, " + name + "!";
-        Message<String> message = MessageBuilder
+        String text = "Hello, " + name + "!";
+        Map<String, Object> greeting = new HashMap<>();
+        greeting.put("greeting", text);
+        Message<Map<String, Object>> message = MessageBuilder
                 .withPayload(greeting)
                 .build();
         this.consumer.send(message);
