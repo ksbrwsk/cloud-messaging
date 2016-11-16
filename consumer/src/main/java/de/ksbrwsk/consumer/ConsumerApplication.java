@@ -3,6 +3,7 @@ package de.ksbrwsk.consumer;
 import org.springframework.beans.factory.InjectionPoint;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
@@ -12,6 +13,7 @@ import org.springframework.integration.dsl.IntegrationFlows;
 import java.util.Map;
 import java.util.logging.Logger;
 
+@RefreshScope
 @EnableBinding(ConsumerChannels.class)
 @SpringBootApplication
 public class ConsumerApplication {
