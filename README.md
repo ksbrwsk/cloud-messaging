@@ -61,7 +61,7 @@ cd consumer
 java -jar consumer-<VERSION>.jar
 ```
 
-###Note:
+# Note:
 the application properties for the consumer and producer apps can be found
 under
 ```
