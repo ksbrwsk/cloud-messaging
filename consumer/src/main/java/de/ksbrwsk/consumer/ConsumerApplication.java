@@ -1,21 +1,20 @@
 package de.ksbrwsk.consumer;
 
-import org.springframework.beans.factory.InjectionPoint;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 
 import java.util.Map;
-import java.util.logging.Logger;
 
 @RefreshScope
 @EnableBinding(ConsumerChannels.class)
 @SpringBootApplication
+@Log4j2
 public class ConsumerApplication {
 
     public static void main(String[] args) {
@@ -23,17 +22,11 @@ public class ConsumerApplication {
     }
 
     @Bean
-    @Scope("prototype")
-    Logger logger(InjectionPoint injectionPoint) {
-        return Logger.getLogger(injectionPoint.getDeclaredType().getName());
-    }
-
-    @Bean
-    public IntegrationFlow integrationFlow(Logger logger, ConsumerChannels consumerChannels) {
+    public IntegrationFlow integrationFlow(ConsumerChannels consumerChannels) {
         return IntegrationFlows
                 .from(consumerChannels.producer())
                 .handle(Map.class, (payload, headers) -> {
-                    logger.info("new Message arrived: " + payload);
+                    log.info("new Message arrived: " + payload);
                     return null;
                 })
                 .get();
