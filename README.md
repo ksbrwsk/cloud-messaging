@@ -14,20 +14,20 @@
 
 Assuming Java, Maven and RabbitMQ are already installed on your local machine
 
-```
+```bash
 mvn clean install
 ```
 
 the configserver application
 
-```
+```bash
 cd configserver
 mvn spring-boot:run
 ```
 
 or
 
-```
+```bash
 cd configserver
 java -jar target/configserver-<VERSION>.jar
 ```
@@ -35,28 +35,28 @@ java -jar target/configserver-<VERSION>.jar
 
 the producer application
 
-```
+```bash
 cd producer
 mvn spring-boot:run
 ```
 
 or
 
-```
+```bash
 cd producer
 java -jar target/producer-<VERSION>.jar
 ```
 
 the consumer application
 
-```
-cd consumer
+```bash
+cd consumer                              
 mvn spring-boot:run
 ```
 
 or
 
-```
+```bash
 cd consumer
 java -jar consumer-<VERSION>.jar
 ```
@@ -70,6 +70,6 @@ configserver/src/main/resources/config
 
 create and send a message
 
-```
+```bash
 curl -d{} http://localhost:8000/greet/YourName
 ```
