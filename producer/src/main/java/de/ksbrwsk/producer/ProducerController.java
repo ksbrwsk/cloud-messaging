@@ -1,6 +1,6 @@
 package de.ksbrwsk.producer;
 
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.support.MessageBuilder;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@Log4j2
+@Slf4j
 public class ProducerController {
 
     private final MessageChannel consumer;
@@ -32,5 +32,4 @@ public class ProducerController {
         this.consumer.send(message);
         log.info("Message send: {}", greeting);
     }
-
 }
